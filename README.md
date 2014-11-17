@@ -3,22 +3,22 @@ Notify Awesome
 
 An Ubuntu-inspired lightweight notification system, powered by Font Awesome.
 
-# Requirements
+## Requirements
 
 * [jQuery](http://jquery.com)
 * [Font Awesome](http://fontawesome.io)
 
-# Bower
+## Bower
 
 ```sh
 $ bower install notify-awesome
 ```
 
-# Example
+## Example
 
 ![Example](examples/example1.jpg?raw=true "Example")
 
-# Usage
+## Usage
 
 To use notify.js, you don't have to modify any files to make it work in your project. Just include notify.js and notify.css in your HTML file like this:
 
