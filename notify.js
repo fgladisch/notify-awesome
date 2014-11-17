@@ -28,16 +28,8 @@ function Notification(element, duration) {
   this.duration = duration * 1000;
 }
 
-function notify(message, duration, type) {
-  var icon;
-  switch(type) {
-  case 'info':
-    icon = '<i class="fa fa-info-circle"></i>';
-    break;
-  case 'error':
-    icon = '<i class="fa fa-exclamation-triangle"></i>';
-    break;
-  }
+function notify(message, duration, faIcon) {
+  var icon = '<i class="fa fa-' + faIcon + '"></i>';
   var html = '<div id="notification-'
     + notificationId + '" class="notification"><div class="notification-logo">'
     + icon + '</div><div class="notification-text">'
