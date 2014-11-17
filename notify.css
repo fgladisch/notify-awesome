@@ -45,11 +45,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   display: inline-block;
   margin-top: -4px;
   width: 50px;
-  font-size: 32px;
+  font-size: 28px;
   vertical-align: top;
 }
 
 .notification-text {
+  font-size: 14px;
   display: inline-block;
   width: 210px;
 }

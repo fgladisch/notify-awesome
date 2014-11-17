@@ -29,7 +29,7 @@ function Notification(element, duration) {
 }
 
 function notify(message, duration, faIcon) {
-  var icon = '<i class="fa fa-' + faIcon + '"></i>';
+  var icon = '<i class="fa fa-' + faIcon + ' fa-fw"></i>';
   var html = '<div id="notification-'
     + notificationId + '" class="notification"><div class="notification-logo">'
     + icon + '</div><div class="notification-text">'
