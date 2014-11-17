@@ -36,7 +36,7 @@ To use notify.js, you don't have to modify any files to make it work in your pro
 A notification can be produced with the following code:
 
 ```javascript
-var message = 'Hellow World!'
+var message = 'Hello World!'
 var seconds = 5;
 var type = 'info' // ... or 'error'
 
