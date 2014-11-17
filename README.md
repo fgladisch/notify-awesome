@@ -1,4 +1,4 @@
-notify.js
+Notify Awesome
 =========
 
 An Ubuntu-inspired lightweight notification system, powered by Font Awesome.
@@ -11,7 +11,7 @@ An Ubuntu-inspired lightweight notification system, powered by Font Awesome.
 # Bower
 
 ```sh
-$ bower install notify-fa
+$ bower install notify-awesome
 ```
 
 # Example
