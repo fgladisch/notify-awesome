@@ -5,7 +5,7 @@ An Ubuntu-inspired lightweight notification system, powered by Font Awesome.
 
 # Requirements
 
-* [jQuery](https://github.com/FortAwesome/Font-Awesome)
+* [jQuery](http://jquery.com)
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 
 # Bower
