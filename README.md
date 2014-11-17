@@ -36,12 +36,14 @@ To use notify.js, you don't have to modify any files to make it work in your pro
 A notification can be produced with the following code:
 
 ```javascript
-var message = 'Hello World!'
+var message = '<p><b>Public Service Announcement</b></p><p>Never turn to the Dark Side!</p>';
 var seconds = 5;
-var type = 'info' // ... or 'error'
+var icon = 'rebel';
 
-notify(message, seconds, type);
+notify(message, seconds, icon);
 ```
+As you can see, notify.js uses [Font Awesome identifiers](http://fortawesome.github.io/Font-Awesome/icons) (minus the fa-* prefix) for icons.
+
 The result will be:
 
 ![Example](examples/example2.jpg?raw=true "Example")
