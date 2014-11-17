@@ -16,9 +16,10 @@
   "license": "GPL",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+    "examples"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "font-awesome": "~4.2.0"
+  }
 }
