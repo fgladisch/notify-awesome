@@ -1,12 +1,18 @@
 notify.js
 =========
 
-An Ubuntu-inspired lightweight notification system.
+An Ubuntu-inspired lightweight notification system, powered by Font Awesome.
 
 # Requirements
 
-* [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 * [jQuery](https://github.com/FortAwesome/Font-Awesome)
+* [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
+
+# Bower
+
+```sh
+$ bower install notify-fa
+```
 
 # Example
 
