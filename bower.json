@@ -16,7 +16,8 @@
   "license": "GPL",
   "ignore": [
     "**/.*",
-    "examples"
+    "examples",
+    "README.md"
   ],
   "dependencies": {
     "jquery": "~2.1.1",
