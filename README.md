@@ -20,18 +20,31 @@ $ bower install notify-awesome
 
 ## Usage
 
-To use notify.js, you don't have to modify any files to make it work in your project. Just include notify.js and notify.css in your HTML file like this:
+Include notify.js and notify.css in your HTML file like this:
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/notify.css" rel="stylesheet" />
-    <script src="js/notify.js"></script>
+    <link href="notify.css" rel="stylesheet" />
+    <script src="notify.js"></script>
   </head>
-  <body></body>
+  <body>...</body>
 <html>
 ```
+Now put a div with the id "notification-area" anywhere in the body-tag:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>...</head>
+  <body>
+    <div id="notification-area"></div>
+  </body>
+<html>
+```
+
+Notifications will be displayed in the top-right corner. You can change that by altering the CSS properties for "#notification-area".
 
 A notification can be produced with the following code:
 
