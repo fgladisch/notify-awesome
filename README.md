@@ -3,6 +3,8 @@ Notify Awesome
 
 An Ubuntu-inspired lightweight notification system, powered by Font Awesome.
 
+[Try it yourself!](http://notify.felixgladisch.de/)
+
 ## Requirements
 
 * [jQuery](http://jquery.com)
