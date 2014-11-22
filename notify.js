@@ -15,12 +15,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var notificationUpdateInterval = 500;
+var notificationUpdateInterval = 200;
 var notificationId = 0;
 var notificationResource = {};
 
 $(document).ready( function() {
-  setInterval(update, notificationUpdateInterval);
+  setInterval(updateNotifications, notificationUpdateInterval);
 });
 
 function Notification(element, duration) {
@@ -46,11 +46,16 @@ function notify(message, duration, faIcon) {
   }, function() {
     element.fadeTo('fast', 0.75);
   });
-  element.fadeTo('fast', 0.75);
+  element.animate({
+    opacity: 0.75,
+    right: "20px"
+  }, 500, function() {
+    element.css('right', '20px')
+  });
   notificationId += 1;
 }
 
-function update() {
+function updateNotifications() {
   for ( var key in notificationResource) {
     var notification = notificationResource[key];
     var time = Math.floor((new Date).getTime() - notification.initTime);
@@ -62,8 +67,11 @@ function update() {
 
 function removeNotification(id) {
   var notification = notificationResource[id];
-  notification.element.fadeOut('slow', function() {
+  notification.element.animate({
+    opacity: 0,
+    right: "-=20px"
+  }, 500, function() {
     notification.element.remove();
     delete notificationResource[id];
-  })
+  });
 }
