@@ -1,12 +1,12 @@
 {
   "name": "Notify Awesome",
   "main": "notify.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "https://github.com/fgladisch/notify-awesome",
   "authors": [
     "Felix Gladisch <felix.gladisch@gmail.com>"
   ],
-  "description": "An Ubuntu-inspired lightweight notification system.",
+  "description": "A lightweight notification system, powered by Font Awesome.",
   "keywords": [
     "javascript",
     "css3",
