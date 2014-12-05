@@ -25,12 +25,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   
   var notify = global.notify;
   
-  var updateInterval = 500;
+  var updateInterval = 200;
   var nextId = 0;
   
   function remove(id) {
-    $('#notification-' + id).fadeOut('slow', function () {
-      this.remove();
+    $('#notification-' + id).animate({
+      'opacity' : '0',
+      'right' : '-=25'
+    }, 500, function () {
+      $(this).remove();
     });
   }
   
@@ -67,7 +70,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       'id' : id,
       'time': (new Date()).getTime(),
       'duration' : duration
-    }).fadeTo('fast', 0.75);
+    }).animate({
+      'opacity' : '0.75',
+      'right' : '+=25'
+    }, 500);
   }
   
   notify.generic = function (message, duration) {
