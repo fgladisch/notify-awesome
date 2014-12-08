@@ -47,45 +47,39 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     });
   }
   
-  function generateHtml(id, faIcon, message) {
+  function generateNotification(message, duration, faIcon) {
     var icon = '<i class="fa fa-' + faIcon + ' fa-fw"></i>';
     var html = '<div id="notification-'
-      + id + '" class="notification"><div class="notification-logo">'
+      + nextId + '" class="notification"><div class="notification-logo">'
       + icon + '</div><div class="notification-text">'
       + message + '</div></div>';
-    return html;
-  }
-  
-  function generateNotification(id, html, duration) {
-    $(html).prependTo('#notification-area').click(function () {
+    var element = $(html).prependTo('#notification-area').click(function () {
       var data = $(this).data('notification');
       remove(data.id);
     }).hover(function () {
       $(this).fadeTo('fast', 0.5);
-      console.log(typeof this);
     }, function () {
       $(this).fadeTo('fast', 0.75);
-      console.log(typeof this);
     }).data('notification', {
-      'id' : id,
+      'id' : nextId,
       'time': (new Date()).getTime(),
       'duration' : duration
     }).animate({
       'opacity' : '0.75',
       'right' : '+=25'
     }, 500);
+    nextId += 1;
+    return element;
   }
   
   notify.generic = function (message, duration) {
-    var html = generateHtml(nextId, 'info-circle', message);
-    generateNotification(nextId, html, duration);
-    nextId += 1;
+    var element = generateNotification(message, duration, 'info-circle');
+    return element;
   };
 
   notify.custom = function (message, duration, faIcon) {
-    var html = generateHtml(nextId, faIcon, message);
-    generateNotification(nextId, html, duration);
-    nextId += 1;
+    var element = generateNotification(message, duration, faIcon);
+    return element;
   };
   
   $(document).ready(function () {
