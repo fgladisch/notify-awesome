@@ -3,7 +3,7 @@ Notify Awesome
 
 A lightweight notification system, powered by Font Awesome.
 
-[Try it yourself!](http://notify.felixgladisch.de/)
+[Try it yourself!](http://fgladisch.github.io/notify-awesome/notify.html)
 
 ## Requirements
 
