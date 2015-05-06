@@ -20,14 +20,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (function (global) {
   'use strict';
-  
-  global.notify = global.notify || {};
-  
-  var notify = global.notify;
-  
+
   var updateInterval = 200;
-  var nextId = 0;
-  
+  var defaultDuration = 5;
+  var currentId = 0;
+
+  $(global).ready(function () {
+    global.setInterval(update, updateInterval);
+  });
+
+  global.Notify = function (message, faIcon, duration) {
+    if (typeof duration !== 'number') {
+      duration = defaultDuration;
+    }
+    if (typeof faIcon !== 'string') {
+      faIcon = 'info-circle';
+    }
+    var element = generate(message, duration, faIcon);
+    return element;
+  };
+
   function remove(id) {
     $('#notification-' + id).animate({
       'opacity' : '0',
@@ -36,7 +48,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       $(this).remove();
     });
   }
-  
+
   function update() {
     $('.notification').each(function (index, value) {
       var data = $(this).data('notification');
@@ -46,13 +58,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       }
     });
   }
-  
-  function generateNotification(message, duration, faIcon) {
+
+  function generate(message, duration, faIcon) {
     var icon = '<i class="fa fa-' + faIcon + ' fa-fw"></i>';
-    var html = '<div id="notification-'
-      + nextId + '" class="notification"><div class="notification-logo">'
-      + icon + '</div><div class="notification-text">'
-      + message + '</div></div>';
+    var html = '<div id="notification-' + currentId + '" class="notification">' +
+      '<div class="notification-logo">' + icon + '</div>' +
+      '<div class="notification-text">' + message + '</div></div>';
     var element = $(html).prependTo('#notification-area').click(function () {
       var data = $(this).data('notification');
       remove(data.id);
@@ -61,29 +72,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     }, function () {
       $(this).fadeTo('fast', 0.75);
     }).data('notification', {
-      'id' : nextId,
+      'id' : currentId,
       'time': (new Date()).getTime(),
       'duration' : duration
     }).animate({
       'opacity' : '0.75',
       'right' : '+=25'
     }, 500);
-    nextId += 1;
+    currentId += 1;
     return element;
   }
-  
-  notify.generic = function (message, duration) {
-    var element = generateNotification(message, duration, 'info-circle');
-    return element;
-  };
-
-  notify.custom = function (message, duration, faIcon) {
-    var element = generateNotification(message, duration, faIcon);
-    return element;
-  };
-  
-  $(document).ready(function () {
-    setInterval(update, updateInterval);
-  });
 
 }(this));

@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   top: 80px;
   right: 24px;
   width: 300px;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .notification {

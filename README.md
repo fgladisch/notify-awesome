@@ -55,12 +55,18 @@ var message = '<p><b>Public Service Announcement</b></p><p>Never turn to the Dar
 var seconds = 5;
 var icon = 'rebel';
 
-notify.custom(message, seconds, icon);
+Notify(message, seconds, icon);
 ```
 As you can see, notify.js uses [Font Awesome identifiers](http://fortawesome.github.io/Font-Awesome/icons) (minus the fa-* prefix) for icons.
 
 The result will be:
 
 ![Example](examples/example2.jpg?raw=true "Example")
+
+Only the message parameter is required. This works too:
+
+```javascript
+Notify('Hello World!');
+```
 
 That's it! Have fun! :-)
