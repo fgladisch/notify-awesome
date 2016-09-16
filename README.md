@@ -1,7 +1,7 @@
 Notify Awesome
 =========
 
-A lightweight notification system, powered by Font Awesome.
+A lightweight notification system, powered by Font Awesome and jQuery.
 
 ## Requirements
 
