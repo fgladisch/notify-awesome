@@ -8,7 +8,15 @@ A lightweight notification system, powered by Font Awesome and jQuery.
 * [jQuery](http://jquery.com)
 * [Font Awesome](http://fontawesome.io)
 
-## Bower
+## Installation
+
+### NPM
+
+```sh
+$ npm install notify-awesome
+```
+
+### Bower
 
 ```sh
 $ bower install notify-awesome
